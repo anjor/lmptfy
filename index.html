@@ -101,7 +101,10 @@
         <h2>Let me Perplexity that for you...</h2>
         <input type="text" id="searchQuery" placeholder="Ask anything...">
         <button onclick="generateLink()">Generate Link</button>
-        <p id="generatedLink"></p>
+        <div id="generatedLinkContainer" style="display: none; margin-top: 10px;">
+            <input type="text" id="generatedLink" readonly style="width: 100%; padding: 5px;">
+            <a href="#" onclick="copyToClipboard()" style="display: block; margin-top: 5px;">Copy URL</a>
+        </div>
         <div id="animation">
             <input type="text" id="searchBar" readonly>
             <div id="cursor"></div>
@@ -116,7 +119,15 @@
             var currentURL = window.location.href.split('?')[0];
             var newURL = currentURL + '?q=' + encodedQuery;
             var linkElement = document.getElementById('generatedLink');
-            linkElement.innerHTML = '<a href="' + newURL + '">' + newURL + '</a>';
+            linkElement.value = newURL;
+            document.getElementById('generatedLinkContainer').style.display = 'block';
+        }
+
+        function copyToClipboard() {
+            var linkElement = document.getElementById('generatedLink');
+            linkElement.select();
+            document.execCommand('copy');
+            alert('URL copied to clipboard!');
         }
 
         window.onload = function () {
