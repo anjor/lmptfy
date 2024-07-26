@@ -15,27 +15,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Let Me Perplexity That For You</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: "Poppins", Arial, sans-serif;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #191A1A;
-            color: #E8E7E6;
-        }
-
-        h1 {
-            font-weight: 300;
-        }
-
-        h2 {
-            font-weight: 300;
+            background-color: #f0f0f0;
         }
 
         .container {
@@ -46,24 +34,15 @@
             width: 300px;
             padding: 10px;
             font-size: 16px;
-            border-radius: 0.5rem;
-            background-color: #202222;
-            border: 1px solid #3C3F40;
-            color: #E8E7E6;
         }
 
         button {
             padding: 10px 20px;
             font-size: 16px;
-            background-color: #1FB8CD;
-            color: #191A1A;
+            background-color: #4CAF50;
+            color: white;
             border: none;
-            border-radius: 0.5rem;
             cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #1F9CAD;
         }
 
         #animation {
@@ -71,9 +50,8 @@
             position: relative;
             width: 600px;
             height: 400px;
-            background-color: #202222;
-            border: 1px solid #3C3F40;
-            border-radius: 0.5rem;
+            background-color: white;
+            border: 1px solid #ccc;
             margin-top: 20px;
         }
 
@@ -83,7 +61,7 @@
             left: 50px;
             width: 500px;
             height: 40px;
-            border: 1px solid #3C3F40;
+            border: 1px solid #ccc;
             border-radius: 20px;
             padding: 0 20px;
             font-size: 18px;
@@ -119,7 +97,7 @@
             left: 50px;
             width: 500px;
             height: 200px;
-            border: 1px solid #3C3F40;
+            border: 1px solid #ccc;
             padding: 10px;
             text-align: left;
             overflow: hidden;
@@ -129,13 +107,13 @@
 
 <body>
     <div class="container">
-        <h1>Where knowledge begins</h1>
+        <h1>Where Knowledge Begins</h1>
         <h2>Let me Perplexity that for you...</h2>
         <input type="text" id="searchQuery" placeholder="Ask anything...">
         <button onclick="generateLink()">Generate Link</button>
         <div id="generatedLinkContainer" style="display: none; margin-top: 10px;">
             <input type="text" id="generatedLink" readonly style="width: 100%; padding: 5px;">
-            <a href="#" onclick="copyToClipboard()" style="display: block; margin-top: 5px; color: #1FB8CD;">Copy URL</a>
+            <a href="#" onclick="copyToClipboard()" style="display: block; margin-top: 5px;">Copy URL</a>
         </div>
         <div id="animation">
             <input type="text" id="searchBar" readonly>
@@ -185,7 +163,7 @@
                     i++;
                 } else {
                     clearInterval(typingInterval);
-                    // setTimeout(showResults, 500);
+                    setTimeout(showResults, 500);
                 }
             }, 100);
         }
