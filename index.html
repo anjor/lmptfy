@@ -22,9 +22,9 @@
         body {
             font-family: "Poppins", Arial, sans-serif;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 100vh;
             margin: 0;
             background-color: #191A1A;
             color: #E8E7E6;
@@ -40,6 +40,12 @@
 
         .container {
             text-align: center;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
 
         input[type="text"] {
@@ -124,6 +130,28 @@
             text-align: left;
             overflow: hidden;
         }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8em;
+            background-color: #202222;
+            width: 100%;
+        }
+
+        .footer a {
+            color: #1FB8CD;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .bmc-btn-container {
+            margin-top: 10px;
+            transform: scale(0.7);
+        }
     </style>
 </head>
 
@@ -135,13 +163,21 @@
         <button onclick="generateLink()">Generate Link</button>
         <div id="generatedLinkContainer" style="display: none; margin-top: 10px;">
             <input type="text" id="generatedLink" readonly style="width: 100%; padding: 5px;">
-            <a href="#" onclick="copyToClipboard()" style="display: block; margin-top: 5px; color: #1FB8CD;">Copy URL</a>
+            <a href="#" onclick="copyToClipboard()" style="display: block; margin-top: 5px; color: #1FB8CD;">Copy
+                URL</a>
         </div>
         <div id="animation">
             <input type="text" id="searchBar" readonly>
             <div id="cursor"></div>
             <div id="result"></div>
         </div>
+    </div>
+
+    <div class="footer">
+        <p>
+            Created by <a href="https://github.com/anjor" target="_blank">anjor</a>
+        </p>
+        <div class="bmc-btn-container"></div>
     </div>
 
     <script>

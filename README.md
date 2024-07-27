@@ -9,3 +9,5 @@ This project is for educational and entertainment purposes only. It is not affil
 ## License
 
 This project is open-source and available under the MIT License.
+
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/anjor)
